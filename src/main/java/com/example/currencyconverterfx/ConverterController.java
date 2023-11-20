@@ -1,14 +1,16 @@
 package com.example.currencyconverterfx;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class ConverterController {
     @FXML
-    private Label welcomeText;
-
+    public TextField enterAmount;
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    public ComboBox fromCurrency, toCurrency;
+    @FXML
+    public Label convertedAmount;
+
 }
