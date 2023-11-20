@@ -3,7 +3,7 @@ package com.example.currencyconverterfx;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class ConverterController {
     @FXML
     private Label welcomeText;
 
