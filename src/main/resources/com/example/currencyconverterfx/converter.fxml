@@ -19,8 +19,8 @@
          <Image url="@../../../currencies.jpg" />
       </ImageView>
       <TextField fx:id="enterAmount" alignment="CENTER" layoutX="56.0" layoutY="230.0" prefHeight="70.0" prefWidth="430.0" promptText="Enter amount..." style="-fx-font-size: 26;" />
-      <ComboBox fx:id="fromCurrency" editable="true" layoutX="56.0" layoutY="340.0" prefHeight="40.0" prefWidth="430.0" promptText="Select From Currency" />
-      <ComboBox fx:id="toCurrency" editable="true" layoutX="56.0" layoutY="420.0" prefHeight="40.0" prefWidth="430.0" promptText="Select Currency To Convert" />
+      <ComboBox fx:id="currencyFromBox" editable="true" layoutX="56.0" layoutY="340.0" prefHeight="40.0" prefWidth="430.0" promptText="Select From Currency" />
+      <ComboBox fx:id="currencyToBox" editable="true" layoutX="56.0" layoutY="420.0" prefHeight="40.0" prefWidth="430.0" promptText="Select Currency To Convert" />
       <Label fx:id="convertedAmount" alignment="CENTER" layoutX="62.0" layoutY="638.0" prefHeight="70.0" prefWidth="417.0" text="- - - - -">
          <font>
             <Font name="System Italic" size="48.0" />
