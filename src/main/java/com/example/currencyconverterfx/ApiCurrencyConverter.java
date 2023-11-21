@@ -1,5 +1,8 @@
 package com.example.currencyconverterfx;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,6 +11,7 @@ import java.util.ArrayList;
 public class ApiCurrencyConverter implements CurrencyConverter{
     private String apiKey;
     private ArrayList<Currency> currencyList;
+    private String currencyFrom, currencyTo;
 
     public ApiCurrencyConverter(String apiKey) {
         this.apiKey = apiKey;
@@ -25,21 +29,22 @@ public class ApiCurrencyConverter implements CurrencyConverter{
 
 
     public void initialize() {
-        getApiKey();
+        getApiKey();    // working
 //        System.out.println(apiKey);   // working
 
-//        try {
-//            currencyList = new CurrencyList(apiKey);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        currencyList = (ArrayList<Currency>) CurrencyService.loadCurrencyList();
+        ObservableList<String> options = FXCollections.observableArrayList();
+
     }
 
     private void getApiKey() {
         BufferedReader reader = null;
         try {
             {
-                String filePath = getClass().getResource("/apikey.txt").getPath().replaceAll("%20", " ");
+                String filePath = getClass()
+                        .getResource("/apikey.txt")
+                        .getPath()
+                        .replaceAll("%20", " ");
                 reader = new BufferedReader(new FileReader(filePath));
 
                 apiKey=reader.readLine();
@@ -48,7 +53,8 @@ public class ApiCurrencyConverter implements CurrencyConverter{
             System.out.println("Error: " + e);
         } finally {
             try {
-                if (reader != null) reader.close();
+                if (reader != null)
+                    reader.close();
             } catch (IOException e) {
                 System.out.println("Error: " + e);
             }
